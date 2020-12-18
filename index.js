@@ -13,15 +13,19 @@ function reversify(str) {
 function Phrase(content) {
   this.content = content;
 
-  this.processedContent = function processedContent() {
-    return this.letters().toLowerCase();
-  }
-
   this.letters = function letters() {
     return this.content.replace(/\W/g, '');
   }
 
+  this.processedContent = function processedContent() {
+    return this.letters().toLowerCase();
+  }
+
   this.isPalindrome = function isPalindrome() {
-    return this.processedContent() === reversify(this.processedContent());
+    if (this.processedContent()) {
+      return this.processedContent() === reversify(this.processedContent());
+    } else {
+      return false;
+    }
   }
 }

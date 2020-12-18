@@ -21,5 +21,9 @@ describe('Phase', () => {
       let punctuationPalindrome = new Phrase(`Madam, I'm Adam`);
       assert(punctuationPalindrome.isPalindrome());
     });
+    it(`Should return false for a palindrome with nothing in it`, () => {
+      let emptyPalindrome = new Phrase(``);
+      assert(!emptyPalindrome.isPalindrome());
+    })
   })
 })
